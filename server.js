@@ -6,6 +6,10 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+  useNewUrlParser: true,
+});
+
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
